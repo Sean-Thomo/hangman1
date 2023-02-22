@@ -6,8 +6,19 @@ import java.util.Scanner;
 
 public class Hangman {
     public static void main(String[] args) {
-        try {
 
+            // ArrayList<String> wordsArray = new ArrayList<String>();
+            // File myObj = new File("shortwords.txt");
+            // Scanner myReader = new Scanner(myObj);
+            // while (myReader.hasNextLine()) {
+            //     String word = myReader.nextLine();
+            //     wordsArray.add(word);
+            // }
+            // myReader.close();
+    }
+
+    static ArrayList<String> getStringArray() {
+        try {
             ArrayList<String> wordsArray = new ArrayList<String>();
             File myObj = new File("shortwords.txt");
             Scanner myReader = new Scanner(myObj);
@@ -17,12 +28,13 @@ public class Hangman {
             }
             myReader.close();
 
-            int index = getRandomInt(0, wordsArray.size());
-
+            return wordsArray;
+    
         } catch (FileNotFoundException e) {
-            System.out.println("An error occured.");
+            System.out.println("An error occured");
             e.printStackTrace();
         }
+        return null;
     }
 
     static int getRandomInt(int min, int max){
