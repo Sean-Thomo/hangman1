@@ -6,12 +6,16 @@ import java.util.Scanner;
 
 public class Hangman {
     public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+
             ArrayList<String> wordsArray = getStringArray();
             String word = selectRandomWord(wordsArray);
             int wordIndex = getRandomInt(word.length());
             final String modifiedWord = word.replace(word.charAt(wordIndex), '_');
-            System.out.println(modifiedWord);
-            
+            System.out.println("Guess the word: " + modifiedWord);
+            System.out.println("Guess the missing letter: ");
+            String letter = input.next();
+            System.out.println("The word was: " + word);
     }
 
     static ArrayList<String> getStringArray() {
